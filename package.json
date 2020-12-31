@@ -1,0 +1,24 @@
+{
+  "name": "cedricroy-blog",
+  "version": "1.0.0",
+  "description": "This reposotitory is for my blog.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigced/cedricroy-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bigced/cedricroy-blog/issues"
+  },
+  "homepage": "https://github.com/bigced/cedricroy-blog#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  },
+  "dependencies": {}
+}
