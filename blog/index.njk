@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+title: Cedric's Corner
+description: Cedric Roys's notes on agile software development and agile product development.
+
+eleventyNavigation:
+  key: Cedric's notes
+  order: 2
+---
+
+<h1>Cedric's Notes</h1>
+<p>On this blog, I would like to share some of my thoughts and observations about Agile software developement practices and Agile Product Management.  Over the past 15 years I've led several teams that allowed me to coach them on delivering value, have quick feedback and improving using the improvement kata</p>
+
+<h2>Here's a list of my notes</h2>
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}
