@@ -43,7 +43,7 @@ Static site generators came around a couple of years ago. I found an article in 
 * It's secured because they are not accessing a server and a database.
 * Hosting is pretty cheap because it only needs to serve static files.
 
-I decided to take a stab at it and build my blogging platform using one of these after reading this (post of Yann. B. on linkedin)[https://www.linkedin.com/posts/yann-boisselier_mes-4-coups-de-coeurs-parmi-les-technologies-activity-6748974841447096320-sKwx].
+I decided to take a stab at it and build my blogging platform using one of these after reading this post of [Yann. B. on linkedin](https://www.linkedin.com/posts/yann-boisselier_mes-4-coups-de-coeurs-parmi-les-technologies-activity-6748974841447096320-sKwx).
 
 # Strategy
 
