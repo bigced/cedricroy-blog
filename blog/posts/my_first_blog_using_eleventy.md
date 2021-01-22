@@ -64,7 +64,7 @@ That vision will help me to keep focus on delivering value
 
 I decided to use Eleventy to generate my static website and Netlify for hosting.  Netlify has a free tier that allows me to host my website.  Netlify has also an integration with Github to automate builds and deployments of generated content.
 
-Every update to the website will be done using git and GitHub.  The repository of my website can be found on [GitHub] (https://github.com/bigced/cedricroy-blog) .  
+Every update to the website will be done using git and GitHub.  The repository of my website can be found on [GitHub](https://github.com/bigced/cedricroy-blog) .  
 
 Eleventy is providing a lot of tutorials.   The tutorial that I’m using for inspiration is this: [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog)
 
