@@ -4,7 +4,11 @@
   "description": "This reposotitory is for my blog.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm-run-all --parallel css eleventy",
+    "eleventy": "eleventy --serve",
+    "debug": "set DEBUG=* & eleventy",
+    "css": "postcss static/css/tailwind.css --o _tmp/static/css/style.css --watch",
+    "build": "cross-env NODE_ENV=production eleventy && cross-env NODE_ENV=production postcss static/css/tailwind.css --o _site/static/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -19,6 +23,18 @@
   "homepage": "https://github.com/bigced/cedricroy-blog#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "@11ty/eleventy-navigation": "^0.1.6"
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "cross-env": "^7.0.3"
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "autoprefixer": "^10.2.3",
+    "cssnano": "^4.1.10",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "postcss-cli-simple": "^3.1.0",
+    "prismjs": "^1.23.0",
+    "tailwindcss": "^2.0.2"
   }
 }
