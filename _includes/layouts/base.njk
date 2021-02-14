@@ -15,25 +15,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cedric Roy's corner | {{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
-  </head>
-  <body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-    <header>
-      <ul class="nav">
-        {%- for entry in collections.all | eleventyNavigation %}
-          <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}" {% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-        {%- endfor %}
-      </ul>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css">
+
+  </head>
+  <body class="font-body">
+
+    <header class="w-full">
+      <nav class="flex items-center justify-center lg:justify-between flex-wrap p-6 lg:px-0 container mx-auto">
+        <div class="flex items-center lg:w-80">
+            <a href="/" class="text-indigo-500 font-bold text-lg">
+                <img class="w-20 rounded-full p-1 inline" src="/static/assets/cedric_roy.jpg" alt="Cedric Roy's picture"/>
+                <span class="text-3xl">Cedric's Corner</span>
+              </a>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto text-center text-2xl">
+          <ul class="lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
+            {%- for entry in collections.all | eleventyNavigation %}
+              <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %} mr-3">
+                <a href="{{ entry.url | url }}" {% if entry.url == page.url %} aria-current="page"{% endif %} class="text-ml inline-block text-gray-900 no-underline hover:text-indigo-500 py-2 px-4">{{ entry.title }}</a>
+              </li>
+            {%- endfor %}
+          </ul>
+        </div>
       
-      
+     </nav> 
      </header>
 
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
-      {{ content | safe }}
+    <main class="w-full gap-4 px-4 lg:mx-0 {% if templateClass %}{{ templateClass }}{% endif %}">
+      <div class="mt-6 px-6">
+        {{ content | safe }}
+      </div>
     </main>
 
     <footer></footer>
-
+    {% if path == "home" %}
+      <!-- Netlify Identity Widget -->
+      <!-- Needed only if you are using Netlify Identity feature -->
+      <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+    {% endif %}
     <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>

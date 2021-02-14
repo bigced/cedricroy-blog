@@ -11,6 +11,7 @@ I had the desire to blog on my experience at leading and coaching teams on agile
 
 # Prerequisites of the blogging platform
 Here is what I wanted for my blogging platform:
+
 1. No server maintenance.
 1. Easy to use editor.
 1. Flexible on the page template.
@@ -76,7 +77,7 @@ I tried to stay away from styling and adding javascript.  They are not mandatory
 
 First of all, I created a github repository to store my website code.  Then I cloned the repository onto my computer.
 
-```
+```shellsession
 ~ $ git clone git@github.com:bigced/cedricroy-blog.git
 ~ $ cd cedricroy-blog
 ```
@@ -84,14 +85,15 @@ Then I headed down to the Eleventy website.
 
 Eleventy is based on node.js.  It’s really flexible and you can have different types of templating engine like markdown or mozilla nunjucks.  You can also augment the behavior by creating different filters to format the data.  Let’s create an 11ty project.
 
-```
+```shellsession
 ~ $ nvm use 10
 ~ $ npm init -y
 ~ $ npm install --save-dev @11ty/eleventy
 ```
 
 Now let’s validate the installation:
-```
+
+```shellsession
 ~ $ npx @11ty/eleventy
 Processed 0 files in 0.03 seconds (v0.11.1)
 
@@ -99,12 +101,13 @@ Processed 0 files in 0.03 seconds (v0.11.1)
 
 Let's create an `index.html`
 
-```
+```shellsession
 ~ $ echo '<!doctype html><html><head><title>Page title</title></head><body><p>Hi</p></body></html>' > index.html
 ```
 
 And finally, 11ty has a built-in server with auto reload on any file change.  Let’s use that in order to see the `index.html`
-```
+
+```shellsession
 ~ $ npx @11ty/eleventy --serve
 ```
 
@@ -114,7 +117,7 @@ If you point your browser to the url provided in the terminal, you should see th
 
 Each file in 11ty can be based on a template.  A template can extend another template.  I need to create the base one that will contain the theme of my site.
 
-```
+```html
 <!doctype html>
 <html class="text-gray-900 antialiased leading-tight" lang="en">
 	<head>
@@ -145,7 +148,8 @@ It’s a basic HTML page with some variable that will be defined by the underlyi
 Let’s save the template under `⁄cedricroy-blog⁄_includes⁄layouts⁄base.njk`
 
 I created a home template.  But it’s empty at this moment other than the templateClass and it’s located at `⁄cedricroy-blog⁄_includes⁄layouts⁄home,njk`
-```
+
+```md
 layout: layouts/base.njk
 templateClass: tmpl-home
 ---
@@ -155,7 +159,7 @@ templateClass: tmpl-home
 
 Finally let’s put the home page in place.  I created the file  `⁄cedricroy-blog⁄index.njk`
 
-```
+```md
 ---
 
 layout: layouts/home.njk
